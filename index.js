@@ -62,8 +62,9 @@ function playRound(humanChoice, computerChoice) {
 
 function playGame(){
     //create function to play 5 rounds 
-    roundNumber = 0;
-    while (roundNumber < 5) {
+    roundNumber = 1;
+    while (roundNumber <= 5) {
+        console.log(`Round: ${roundNumber}`);
         // get computer choice and assign it to a function
         let computerSelection = getComputerChoice();
         //get human choice and assign it to a function created earlier
@@ -76,10 +77,8 @@ function playGame(){
         humanSelection = humanSelection.toLocaleLowerCase();
         if (humanSelection === "rock" || humanSelection === "paper" || humanSelection === "scissors"){
             playRound(humanSelection, computerSelection);
+    
         roundNumber++;
-        }else {
-            console.log("Invalid entry");
-            continue;
         }
     }
     }
